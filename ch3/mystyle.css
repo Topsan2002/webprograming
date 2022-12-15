@@ -1,4 +1,4 @@
-body {
+/* body {
     background: #DDFCDD;
     color: black;
 }
@@ -22,4 +22,27 @@ p {
     font-style: normal;
     font-family: Cordia New;
     font-size: 14pt;
+} */
+
+body {
+    background: pink;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    font-size: 16pt;
+}
+
+h4 {
+    text-align: left;
+    font-size: 12pt;
+    font-style: italic;
+    color: green;
+}
+
+p {
+    text-align: left;
+    font-style: normal;
+    color: blue;
 }
