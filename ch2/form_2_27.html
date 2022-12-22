@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>แบบฟอร์มบันทึกข้อมูลนักศึกษา</title>
+</head>
+
+<body>
+    <h2>แบบฟอร์มบันทึกข้อมูลนักศึกษา</h2>
+    <form action="" method="post" name="form1" id="form1">
+        รหัสนักศึกษา :
+        <input type="text" maxlength="10" name="stdId" />
+        <br /> 
+        ชื่อ-นามสกุลนักศึกษา :
+        <input type="text" size="40" name="name" /><br />
+         รหัส่ผ่าน :
+        <input type="password" maxlength="6" size="6" name="password" /><br /> 
+        เพศ :
+        <input type="radio" name="sex" value="1" /> ชาย
+        <input type="radio" name="sex" value="2" /> หญิง <br /> 
+        งานอดิเรก :
+        <input type="checkbox" name="hobby[]" value="1" /> อ่านหนังสือ
+        <input type="checkbox" name="hobby[]" value="2" /> ดูโทรทัศน์
+        <input type="checkbox" name="hobby[]" value="3" /> เล่นกีฬา<br /> 
+        อัพโหลดข้อมูล :
+        <input type="file" name="uploadfile" /> <br />
+        <input type="submit" value="ส่งข้อมูล">
+        <input type="reset" value="reset">
+        <!-- <input type="button" value="Login"> -->
+    </form>
+</body>
+
+</html>
