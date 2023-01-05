@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title> การสร้างฟอร์ม </title>
+</head>
+
+<body>
+    <form action="" method="post" name="form1" id="form1">
+        รหัสบัตรประชาชน : <input type="text" maxlength="13" name="idcard" /><br />
+        ชื่อ-นามสกุล : <input type="text" name="fullname" size="40" /><br /> 
+        เพศ : 
+        <select name="gender">
+            <option value="male" />ชาย 
+            <option value="female" />หญิง
+        </select>
+        <br /> 
+    งานอดิเรก :
+    <select size="3" name="hobby" multiple>
+        <option value="read book" /> อ่านหนังสือ
+        <option value="watch TV" /> ดูโทรทัศน์
+        <option value="play sport" /> เล่นกีฬา
+    </select>
+    <br />
+    <br />
+        <input type="submit" name="sendform"  value="ส่งข้อมูล" />
+        <input type="reset" value="ล้างข้อมูล" />
+    </form>
+</body>
+
+</html>
