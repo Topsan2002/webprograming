@@ -9,24 +9,29 @@
 
 <body>
     <h2>แบบฟอร์มบันทึกข้อมูลนักศึกษา</h2>
-    <form action="" method="post" name="form1" id="form1">
+    <form action="lab2_27.php" method="post" name="form1" id="form1">
         รหัสนักศึกษา :
         <input type="text" maxlength="10" name="stdId" />
-        <br /> 
-        ชื่อ-นามสกุลนักศึกษา :
-        <input type="text" size="40" name="name" /><br />
-         รหัส่ผ่าน :
-        <input type="password" maxlength="6" size="6" name="password" /><br /> 
-        เพศ :
+        <br /> ชื่อ-นามสกุลนักศึกษา :
+        <input type="text" size="40" name="name" /><br /> รหัส่ผ่าน :
+        <input type="password" maxlength="6" size="6" name="password" /><br /> เพศ :
         <input type="radio" name="sex" value="1" /> ชาย
-        <input type="radio" name="sex" value="2" /> หญิง <br /> 
-        งานอดิเรก :
-        <input type="checkbox" name="hobby[]" value="1" /> อ่านหนังสือ
-        <input type="checkbox" name="hobby[]" value="2" /> ดูโทรทัศน์
-        <input type="checkbox" name="hobby[]" value="3" /> เล่นกีฬา<br /> 
-        อัพโหลดข้อมูล :
-        <input type="file" name="uploadfile" /> <br />
-        ความคิดเห็น : <br><textarea  cols="60" rows="5"></textarea><br/>
+        <input type="radio" name="sex" value="2" /> หญิง <br /> งานอดิเรก :
+        <input type="checkbox" name="hobby[]" value="อ่านหนังสือ" /> อ่านหนังสือ
+        <input type="checkbox" name="hobby[]" value="ดูโทรทัศน์" /> ดูโทรทัศน์
+        <input type="checkbox" name="hobby[]" value="เล่นกีฬา" /> เล่นกีฬา<br /> งานอดิเรก :
+        <input type="checkbox" name="hobby1" value="อ่านหนังสือ" /> อ่านหนังสือ
+        <input type="checkbox" name="hobby2" value="ดูโทรทัศน์" /> ดูโทรทัศน์
+        <input type="checkbox" name="hobby3" value="เล่นกีฬา" /> เล่นกีฬา<br /> อัพโหลดข้อมูล :
+        <input type="file" name="fileupload" /> <br /> ความคิดเห็น : <br><textarea cols="60" rows="5" name="comment"></textarea><br/> Please select color. <br>
+        <input type="checkbox" name="chkColor[]" value="Red" > Red
+        <input type="checkbox" name="chkColor[]" value="Green" > Green
+        <input type="checkbox" name="chkColor[]" value="Blue" > Blue
+        <input type="checkbox" name="chkColor[]" value="orange" > orange
+        <input type="checkbox" name="chkColor[]" value="Black" > Black
+        <input type="checkbox" name="chkColor[]" value="Pink" > Pink
+        <br>
+
         <input type="submit" value="ส่งข้อมูล">
         <input type="reset" value="reset">
         <!-- <input type="button" value="Login"> -->
