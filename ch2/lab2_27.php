@@ -10,142 +10,114 @@
 <style>
     body {
         font-family: "Kanit", serif;
+        background:gainsboro    ;
     }
 </style>
 <body>
     <!-- <h2>แบบฟอร์มบันทึกข้อมูลนักศึกษา</h2> -->
-	<div class="costainer p-5">
-        <h2 class="text-center fw-bold">แบบฟอร์มบันทึกข้อมูลนักศึกษา</h2>
-        <form action="lab2_27.php" method="post" name="form1" id="form1">
+    <?php 
+    $stdId = $_REQUEST['stdId'];
+    $name = $_REQUEST['name'];
+    $pass = $_REQUEST['password'];
+    $sex = $_REQUEST['sex'];
+    $hobby = "";
+    foreach ($_REQUEST['hobby'] as $key => $value) {
+        $hobby .= ( $key != count($_REQUEST['hobby'])-1 ? $value.", " : $value);
+    }
+    
 
-            <div class="d-flex justify-content-center">
+     ?>
+	<div class="costainer p-5 bg-white m-5">
+        <h2 class="text-center fw-bold">    ข้อมูลนักศึกษา</h2>
+        
+
+            <div class="d-flex justify-content-start">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">รหัสนักศึกษา : <?php echo $_REQUEST['stdId'] ?></label>
+                    <div class="col-md-12">
+                        <?php 
+studentData($stdId,$name,$pass,$sex,$hobby);
+
+
+                         ?>
+                       <!--  <div class="mb-3">
+                            <label for="exampleInputEmail1"  class="form-label fw-bolder">รหัสนักศึกษา : <?php echo $_REQUEST['stdId']; ?></label>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">ชื่อ-นามสกุลนักศึกษา</label>
-                            <input type="text" class="form-control" id="" name="name">
+                            
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">รหัส่ผ่าน</label>
-                            <input type="password" class="form-control" name="password">
-                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                            <label for="exampleInputEmail1" class="form-label fw-bolder">รหัส่ผ่าน : <?php echo $_REQUEST['password'] ?></label>
                         </div>
                         <div class="mb-0">
-                            <label for="" class="form-label">เพศ</label>
-
+                            <label for="" class="form-label">เพศ : <?php echo $_REQUEST['sex'] ?></label>
                         </div>
-                        <div class="mb-3">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="sex1" value="male">
-                                <label class="form-check-label" for="sex1">ชาย</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="sex2" value="female">
-                                <label class="form-check-label" for="sex2">หญิง</label>
-                            </div>
-                        </div>
-
                         <div class="mb-0">
-                            <label for="exampleInputEmail1" class="form-label">งานอดิเรก </label>
+                            <label for="exampleInputEmail1" class="form-label fw-bolder">งานอดิเรก :  </label>
                         </div>
                         <div class="mb-3">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="hobby[]" id="hobby1" value="option1">
-                                <label class="form-check-label" for="hobby1">อ่านหนังสือ</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="hobby[]" id="hobby2" value="option2">
-                                <label class="form-check-label" for="hobby2">ดูโทรทัศน์</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="hobby[]" id="hobby3" value="option2">
-                                <label class="form-check-label" for="hobby3">เล่นกีฬา</label>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">อัพโหลดข้อมูล</label>
-                            <input type="file" class="form-control" id="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">ความคิดเห็น</label>
+                            <label for="" class="form-label fw-bolder">ความคิดเห็น : </label>
                             <div class="form-floating">
-                                <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">ความคิดเห็น</label>
+                              
+                                    <?php echo $_REQUEST['comment'] ?>
+                               
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label"> Please select color.  </label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="chkColor[]" id="flexCheckDefault" value="option1">
-                                <label class="form-check-label" for="">Red</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="chkColor[]" id="color1" value="option2">
-                                <label class="form-check-label" for="color1">Green</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="chkColor[]" id="color2" value="option2">
-                                <label class="form-check-label" for="color2">Blue</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="chkColor[]" id="color3" value="option2">
-                                <label class="form-check-label" for="color3">orange</label>
-                            </div>
-                            <div class="form-check form-check-inline   ">
-                                <input class="form-check-input" type="checkbox" name="chkColor[]" id="color4" value="option2">
-                                <label class="form-check-label" for="color4">Black</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="chkColor[]" id="color5" value="option2">
-                                <label class="form-check-label" for="color5">Pink</label>
-                            </div>
+                            <label for="exampleInputEmail1" class="form-label fw-bolder">Select color.  </label>
+                            <p>
+                                <?php 
+
+                                    foreach ($_REQUEST['chkColor'] as $key => $value) {
+                                     echo "chkColor : ".$key." = ".$value."<br>";
+                                 }   
+
+                                 ?>
+                            </p>
                         </div>
 
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success me-3">Submit</button>
-                            <button type="reset" class="btn btn-primary">reset</button>
+                        <a class="btn btn-primary"href="form_2_27.html">Back</a>
 
+                        <div>
+                            <b class="fw-bolder">ffdd</b>dddd
                         </div>
 
-                    </div>
+
+                    </div> -->
+
+                     <a class="btn btn-primary"href="form_2_27.html">Back</a>
+
                 </div>
             </div>
-
-
-
-        </form>
     </div>
-<?php 
-	$sex = $_REQUEST['sex'];
-	$hobby = "";
-	// $hobby1 = $_POST['hobby1'];
-	// $hobby2 = $_POST['hobby2'];
-	// $hobby3 = $_POST['hobby3'];
-	foreach ($_REQUEST['hobby'] as $key => $value) {
-		$hobby .= (	$key != count($_REQUEST['hobby'])-1 ? $value.", " : $value);
-	}	
-
-	echo "<b>รหัสนักศึกษา : </b> ".$_REQUEST['stdId']."<br>";
-	echo "<b>ชื่อ-นามสกุลนักศึกษา : </b> ".$_REQUEST['name']."<br>";
-	echo "<b>รหัส่ผ่าน : </b> ".$_REQUEST['password']."<br>";
-	echo "<b>เพศ : </b> ".($sex == 1?"male":"female")."<br>";
-	echo "<b>งานอดิเรก  : </b> ".$hobby."<br>";
-	echo "<b>งานอดิเรก  : </b> <br>";
-	if(isset($_POST['hobby1'])) echo $_POST['hobby1']."<br>";
-	if(isset($_POST['hobby2'])) echo $_POST['hobby2']."<br>";
-	if(isset($_POST['hobby3'])) echo $_POST['hobby3']."<br>";
-	echo "<b>Color  : </b> <br>";
-
-	foreach ($_REQUEST['chkColor'] as $key => $value) {
-		echo "chkColor : ".$key." = ".$value."<br>";
-	}	
-
- ?>
-
-<a href="form_2_27.html">back</a>
 
 </body>
 </html>
+
+<?php 
+    // function stdId() {return $_REQUEST['stdId'];}
+    // function name() {return $_REQUEST['name'];}
+    // function password() {return $_REQUEST['password'];}
+    // function sex() {return $_REQUEST['sex'];}
+    // function hobby() {
+    // $hobby = "";
+    // foreach ($_REQUEST['hobby'] as $key => $value) {
+    //     $hobby .= ( $key != count($_REQUEST['hobby'])-1 ? $value.", " : $value);
+    // }
+    // return $hobby;
+
+    // }
+
+function studentData($id,$name,$pass, $sex, $hobby){
+
+    echo "<b class='fw-bolder mb-1'> รหัสนักศึกษา : "."</b>".$id."<br>";
+    echo "<b class='fw-bolder mb-1'> ชื่อ-นามสกุลนักศึกษา : "."</b>".$name."<br>";
+    echo "<b class='fw-bolder mb-1'> รหัส่ผ่าน : "."</b>".$pass."<br>";
+    echo "<b class='fw-bolder mb-1'> เพศ : "."</b>".$sex."<br>";
+    echo "<b class='fw-bolder mb-1'> งานอดิเรก : "."</b>".$hobby."<br>";
+
+}
+
+
+
+ ?>
