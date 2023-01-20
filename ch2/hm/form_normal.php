@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <!-- <h2>แบบฟอร์มบันทึกข้อมูลนักศึกษา</h2> -->
-  <form action="" method="post" name="form1" id="form1">
+    <h2>แบบปกติ</h2>
+  <form action="show_normal.php" method="post" name="form1" id="form1">
 Username : <input type="text" name="username" maxlength="10" /><br /> <br />
 Password : <input type="password" name="password" maxlength="6" /><br /> <br />
 ความคิดเห็น : <textarea cols="40" rows="5" name="comment" ></textarea><br />
