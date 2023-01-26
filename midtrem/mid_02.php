@@ -63,15 +63,9 @@
             echo "<h2> Min : ".getMin($num)."</h2>";
             echo "<h2> Sum : ".getSum($num)."</h2>";
         }
-    
-    
     ?>
-
 </body>
-
 </html>
-
-
 <?php 
 
     function getMin($arr){
