@@ -58,9 +58,10 @@ $check = "^/[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถ�
     <?php
         $query = $conn->query("SELECT * FROM tb_customer");
         $fet = $query->fetch_object();
-        // echo $fet->cus_name;
-        $sql = "INSERT INTO tb_customer(cus_name, cus_address, cus_email, cus_phone) 
-        VALUES('".$name."','".$address."', '".$email."', '".$phone."') ";
+        echo $fet->cus_name;
+        $sql = "UPDATE tb_customer SET 
+        cus_name = '".$name."', cus_address = '".$address."',  cus_email = '".$email."', cus_phone = '".$phone."'
+        WHERE cus_id = '".$_REQUEST['cus_id']."' ";
         // $query = $conn->query($sql);
         // if($query){
         //     echo "<script>
@@ -102,7 +103,6 @@ $check = "^/[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถ�
         </tr>
     </table>
     <!-- <button style="margin-top:15px;" onclick=" history.back();">BACK</button> -->
-    <a style="margin-top:15px;" href="../addCustomer.php">BACK</a>
     <a style="margin-top:15px;" href="../listCustomer.php">รายชื่อลูกค้า</a>
     <!-- <input style="margin-top:15px;" type="submit" value="บันทึกข้อมูล">
     <input type="reset" value="ล้างข้อมูล"> -->
