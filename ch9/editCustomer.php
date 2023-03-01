@@ -23,6 +23,10 @@
             <th colspan="2" style="text-align:left; color:red;">*required field</th>
         </tr>
         <tr>
+            <td width="150">รหัส</td>
+            <td width="450"><input placeholder="ชื่อ - สกุล" type="text" name="name" id="" size="50" minlength="4" disabled required value="<?php echo $fet->cus_id ?>"></td>
+        </tr>
+        <tr>
             <td width="150">ชื่อ-นามสกุล :</td>
             <td width="450"><input placeholder="ชื่อ - สกุล" type="text" name="name" id="" size="50" minlength="4" required value="<?php echo $fet->cus_name ?>"></td>
         </tr>
@@ -43,7 +47,7 @@
     </table>
 
     <input style="margin-top:15px;" type="submit" value="บันทึกข้อมูล">
-    <input type="reset" value="ล้างข้อมูล">
+    <!-- <input type="reset" value="ล้างข้อมูล"> -->
     <a href="./listCustomer.php">รายชื่อลูกค้า</a>
     </form>
 </center>

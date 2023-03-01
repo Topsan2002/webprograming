@@ -58,7 +58,7 @@ $check = "^/[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถ�
     <?php
         $query = $conn->query("SELECT * FROM tb_customer");
         $fet = $query->fetch_object();
-        echo $fet->cus_name;
+        // echo $fet->cus_name;
         $sql = "UPDATE tb_customer SET 
         cus_name = '".$name."', cus_address = '".$address."',  cus_email = '".$email."', cus_phone = '".$phone."'
         WHERE cus_id = '".$_REQUEST['cus_id']."' ";
@@ -82,8 +82,13 @@ $check = "^/[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถ�
         <tr>
             <th colspan="2" >ข้อมูลลูกค้า</th>
         </tr>
+        
          <tr>
             <th colspan="2" style="text-align:left; color:red;">*required field</th>
+        </tr>
+        <tr>
+            <td width="150">รหัส</td>
+            <td width="450"><input placeholder="ชื่อ - สกุล" type="text" name="name" id="" size="50" minlength="4" disabled required value="<?php echo $fet->cus_id ?>"></td>
         </tr>
         <tr>
             <td width="150">ชื่อ-นามสกุล :</td>
